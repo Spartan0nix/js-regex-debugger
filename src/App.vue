@@ -1,27 +1,58 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+  <main class="app">
+    <div class="container">
+      <section class="regex">
+        <h4>Expression régulière</h4>
+        <div class="regex-input">
+          <pre>
+            <span>&ZeroWidthSpace;</span>
+          </pre>
+        </div>
+      </section>
+      <section class="test-string">
+        <h4>Chaine de test</h4>
+        <div class="test-string-input">
+          <pre>
+            <span>&ZeroWidthSpace;</span>
+          </pre>
+        </div>
+      </section>
+    </div>
+  </main>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import HelloWorld from './components/HelloWorld.vue';
 
 export default defineComponent({
   name: 'App',
-  components: {
-    HelloWorld
-  }
+  components: {}
 });
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.app {}
+
+.container {
+  width: 70%;
+  margin: 3rem auto;
+  background-color: #F3F5F6;
+  color: #0B090A;
+  padding: 1.5rem;
+}
+.container section {
+  border: 1px solid red;
+}
+
+.test-string {
+  margin: 1rem 0 0 0;
+}
+
+h4 {
+  border: 1px solid yellow;
+  margin: 0.2rem 0 0.2rem 0;
 }
 </style>
