@@ -1,0 +1,15 @@
+:root {
+    --black: #0B090A;
+
+    --light-grey: #F3F5F6;
+
+    --medium-red: #BA181B;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+input {
+    font-family: inherit;
+}
+
+@import './modules/_input.css';
