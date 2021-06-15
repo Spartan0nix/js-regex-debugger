@@ -38,29 +38,44 @@ export default defineComponent({
     onMounted(() => {
       const regexEditor = CodeMirror.fromTextArea(document.getElementById('regex-input') as HTMLTextAreaElement, {
         lineNumbers: true,
-        theme: 'dracula'
+        theme: 'dracula',
+        mode: "none"
       })
 
       const testStringEditor = CodeMirror.fromTextArea(document.getElementById('test-string') as HTMLTextAreaElement, {
         lineNumbers: true,
-        theme: 'dracula'
+        theme: 'dracula',
+        mode: 'regex'
       })
       
       regexEditor.on("change", (element) => {
-        console.log(element.getValue());
+        regex.value = element.getValue();
+        setTimeout(() => {
+          testStringEditor.setValue(testStringEditor.getValue());
+        },10)
+        
       })
     })
     
-    // watch([regex, testString], () => {
-    //   if(regex.value == "" || testString.value == ""){
-    //     return
-    //   }
-
-    //   [...testString.value].forEach(c => {
-    //     console.log(c)
-    //   })
-
-    // })
+    CodeMirror.defineMode("regex",function() {
+      return {
+        token: function(stream, state) {
+          try {
+              var regexExp = new RegExp(regex.value, 'g')
+              if(stream.match(regexExp)) {
+                stream.eat(regexExp)
+                return "regex";
+              } else {
+                stream.next();
+                return null;
+              }
+          } catch (error) {
+            stream.next();
+            return null;
+          }
+        } 
+      } 
+    })
 
     const match = (match: boolean) => {
       let testStrinContainer = document.getElementById("test-string");
