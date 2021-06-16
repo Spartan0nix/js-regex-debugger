@@ -1,12 +1,15 @@
 :root {
-    --black: #0B090A;
+    --primary: #292929;
+    --secondary: #363D45;
+    --font: #F5F5F5;
+    --red: #B4181E;
+    --light-red: #E5383B;
 
-    --light-grey: #F3F5F6;
-
-    --medium-red: #BA181B;
-
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--font);
 }
+* { margin: 0; padding: 0; }
+body { height: 100vh; background-color: var(--primary);}
 
 input {
     font-family: inherit;
