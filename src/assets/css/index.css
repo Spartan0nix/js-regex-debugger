@@ -11,8 +11,21 @@
 * { margin: 0; padding: 0; }
 body { height: 100vh; background-color: var(--primary);}
 
+/**
+* Input
+*/
 input {
     font-family: inherit;
 }
+.input-text {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.9rem;
+}
 
-@import './modules/_input.css';
+/**
+* codemirror
+*/
+.cm-regex {
+    background-color: var(--light-red)
+}

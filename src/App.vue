@@ -5,12 +5,14 @@
       <section class="regex">
         <h3>Expression régulière</h3>
         <div class="input-text">
+          <form action="regex-input"></form>
           <textarea id="regex-input" placeholder="Entrez votre expression régulière ..." v-model="regex" style="display: none"></textarea>
         </div>
       </section>
       <section class="test-string">
         <h3>Chaine de test</h3>
         <div class="input-text">
+          <form action="test-string"></form>
           <textarea id="test-string" placeholder="Entrez votre chaîne de test ..." v-model="testString" style="display: none"></textarea>
         </div>
       </section>
@@ -19,7 +21,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, ref, watch } from 'vue';
+import { defineComponent, onMounted, ref} from 'vue';
 import * as CodeMirror from 'codemirror';
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/theme/dracula.css';
@@ -88,10 +90,6 @@ export default defineComponent({
 
 <style>
 @import './assets/css/index.css'; 
-
-main {
-  /* padding-top: 5rem; */
-}
 
 h2 {
   text-align: center;
