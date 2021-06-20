@@ -3,16 +3,14 @@
     <h2>Tester vos expressions régulières</h2>
     <div class="container">
       <section class="regex">
-        <h3>Expression régulière</h3>
+        <label for="regex-input"><h3>Expression régulière</h3></label>
         <div class="input-text">
-          <form action="regex-input"></form>
           <textarea id="regex-input" placeholder="Entrez votre expression régulière ..." v-model="regex" style="display: none"></textarea>
         </div>
       </section>
       <section class="test-string">
-        <h3>Chaine de test</h3>
+        <label for="test-string"><h3>Chaine de test</h3></label>
         <div class="input-text">
-          <form action="test-string"></form>
           <textarea id="test-string" placeholder="Entrez votre chaîne de test ..." v-model="testString" style="display: none"></textarea>
         </div>
       </section>
